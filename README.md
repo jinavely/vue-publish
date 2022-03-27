@@ -1,8 +1,8 @@
 # 퍼블리셔를 위한 vue
 
 ### 기본
-nvm 사용
-vscode 확장프로그램
+- nvm 사용
+- vscode 확장프로그램
 <hr/>
 
 ### VUE CLI
@@ -29,7 +29,6 @@ vscode 확장프로그램
 9. components작성(부모-자식-형제) - $emit, $nextTick 등등
 10. v-model(양방향 처리) - 검색
 11. 내장 컴포넌트(keep-alive, slot 등등)
------------------- 개발 영역 ----------------------
 12. axios를 이용한 데이터 처리
 13. 간단한 store 및 vuex
 <hr/>
