@@ -28,18 +28,18 @@
 - 예시는 10.16.3 노드버전, vue2입니다.
 <pre>
 <code>
-# install
-npm install -g @vue/cli
-# OR
-yarn global add @vue/cli
+  # install
+  npm install -g @vue/cli
+  # OR
+  yarn global add @vue/cli
 
-# update
-npm update -g @vue/cli
-# OR
-yarn global upgrade --latest @vue/cli
+  # update
+  npm update -g @vue/cli
+  # OR
+  yarn global upgrade --latest @vue/cli
 
-# vue 생성
-vue create [프로젝트명]
+  # vue 생성
+  vue create [프로젝트명]
 </code>
 </pre>
 2. 기본 라우터
@@ -47,13 +47,13 @@ vue create [프로젝트명]
     - code 스플리팅(페이지 진입시 해당 페이지만 가져옴 - 네트워크 탭에서 확인)
 <pre>
 <code>
-#. Hash mode(기본)
-Hash mode는 모든 URL을 HASH(#) 형태로 서비스합니다. 
-URL이 변경될 때 페이지가 다시 로드 되지 않는다.
+  #. Hash mode(기본)
+  Hash mode는 모든 URL을 HASH(#) 형태로 서비스합니다. 
+  URL이 변경될 때 페이지가 다시 로드 되지 않는다.
 
-#. History mode
-페이지를 다시 로드하지 않고 URL을 탐색할 수 있습니다.
-SPA의 단일 페이지 클라이언트앱이기 때문에 사용자가 직접 http://example.ocm/user/id에 접속하면 404 오류가 발생합니다.
+  #. History mode
+  페이지를 다시 로드하지 않고 URL을 탐색할 수 있습니다.
+  SPA의 단일 페이지 클라이언트앱이기 때문에 사용자가 직접 http://example.ocm/user/id에 접속하면 404 오류가 발생합니다.
 </code>
 </pre>
 4. views에 page생성 및 components 작성(vue-tools로 확인가능)
@@ -62,33 +62,33 @@ SPA의 단일 페이지 클라이언트앱이기 때문에 사용자가 직접 h
 [설치](https://joshua1988.github.io/web-development/vuejs/boost-productivity/)
 <pre>
 <code>
-1. 화면 ESLint overlay 나오지 않게 하는법
-vue.config.js파일에 작성
-module.exports = {
-    devServer: {
-        overlay: false
-    }
-}
+  1. 화면 ESLint overlay 나오지 않게 하는법
+  vue.config.js파일에 작성
+  module.exports = {
+      devServer: {
+          overlay: false
+      }
+  }
 
-2. resolve로 절대경로로 대체
-jsconfig.js
-{
+  2. resolve로 절대경로로 대체
+  jsconfig.js
+  {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
+      "baseUrl": ".",
+      "paths": {
       "~/*": [
-        "./*"
+          "./*"
       ],
       "@/*": [
-        "./src/*"
+          "./src/*"
       ],
-    }
+      }
   },
   "exclude": [
-    "node_modules",
-    "dist"
+      "node_modules",
+      "dist"
   ]
-}
+  }
 </code>
 </pre>
 <hr/>
