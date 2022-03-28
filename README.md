@@ -58,6 +58,11 @@
 </pre>
 4. views에 page생성 및 components 작성(vue-tools로 확인가능)
 5. scss설치
+  <pre>
+  <code>
+    npm install node-sass sass-loader@10 --save-dev
+  </code>
+  </pre>
 6. webpack, prettier, eslint, vue config등등
 [설치](https://joshua1988.github.io/web-development/vuejs/boost-productivity/)
 <pre>
@@ -74,27 +79,100 @@
   jsconfig.js
   {
   "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-      "~/*": [
-          "./*"
-      ],
-      "@/*": [
-          "./src/*"
-      ],
-      }
+    "baseUrl": ".",
+    "paths": {
+    "~/*": [
+        "./*"
+    ],
+    "@/*": [
+        "./src/*"
+    ],
+    }
   },
   "exclude": [
       "node_modules",
       "dist"
   ]
   }
+
+  3. .eslintrc.js(자바스크립트 문법 검사) 및 prettier 같이 적용
+    module.exports = {
+    // 현재 eslintrc 파일을 기준으로 ESLint 규칙을 적용
+    root: true,
+    // 추가적인 규칙들을 적용
+    extends: [
+      'eslint:recommended',
+      'plugin:vue/essential',
+      'prettier',
+      'plugin:prettier/recommended',
+    ],
+    // 코드 정리 플러그인 추가
+    plugins: ['prettier'],
+    // 사용자 편의 규칙 추가
+    rules: {
+      'prettier/prettier': [
+      'error',
+      // 아래 규칙들은 개인 선호에 따라 prettier 문법 적용
+      // https://prettier.io/docs/en/options.html
+      {
+          singleQuote: true,
+          semi: true,
+          useTabs: true,
+          tabWidth: 2,
+          trailingComma: 'all',
+          printWidth: 80,
+          bracketSpacing: true,
+          arrowParens: 'avoid',
+      },
+      ],
+      'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    },
+    };
+
+    4. settings.json(vscode 단축키 ctrl + ,) => eslint:valitate
+    {
+      // ESLint
+      "eslint.validate": [
+        "vue",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+      ],
+      "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+      },
+      "eslint.workingDirectories": [
+          {"mode": "auto"}
+      ],
+      // don't format on save
+      "editor.formatOnSave": false
+    }
+
+    5. packge.json
+    "devDependencies": {
+      "@vue/cli-plugin-babel": "^4.1.0",
+      "@vue/cli-plugin-eslint": "^4.1.0",
+      "@vue/cli-plugin-unit-jest": "^4.1.0",
+      "@vue/cli-service": "^4.1.0",
+      "@vue/eslint-config-prettier": "^5.0.0",
+      "@vue/test-utils": "1.0.0-beta.29",
+      "babel-eslint": "^10.0.3",
+      "eslint": "^5.16.0",
+      "eslint-plugin-prettier": "^3.1.1",
+      "eslint-plugin-vue": "^5.0.0",
+      "prettier": "^1.19.1",
+      "vue-template-compiler": "^2.6.10"
+    },
 </code>
 </pre>
 <hr/>
 
 ### VUE NUXT
 1. nuxt 로 설치(nuxt정의)
+    > Vue.js로 빠르게 웹을 제작할 수 있게 도와주는 프레임워크입니다. 
+    웹 애플리케이션을 제작할 때 필요한 뷰엑스, 라우터, Axios와 같은 라이브러리들을 미리 구성하여 싱글 페이지 애플리케이션(Single Page Application), 서버 사이드 렌더링(Server Side Rendering), 정적 웹 사이트(Static Generated Website)를 쉽게 제작
+
 2. 샘플 페이지 작성(HTML로) - Flagment설명
 3. 에러, 공통 페이지
 4. 리액티브 data 정의
@@ -108,12 +186,12 @@
 11. components작성(부모-자식-형제) - $emit, $nextTick 등등
 12. v-model(양방향 처리) - 검색
 13. 내장 컴포넌트(keep-alive, slot 등등)
-<hr/>
+---
 
 14. env, process 파일 설정
 15. axios를 이용한 데이터 처리
 16. 간단한 store 및 vuex
 17. swegger 사용법
-d
+
 <hr/>
 
